@@ -1,6 +1,7 @@
 import GameBoard from './components/GameBoard';
 import './App.css';
 import { Row } from 'react-bootstrap';
+import Quote from './components/Quote';
 
 function App() {
   return (

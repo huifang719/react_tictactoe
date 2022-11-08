@@ -1,6 +1,6 @@
+import { Card } from "react-bootstrap"
 function Quote() {
-  https://api.gameofthronesquotes.xyz/v1/random
-  
+  fetch('https://api.gameofthronesquotes.xyz/v1/random')
   return (
     <Card>
       <Card.Header>Quote</Card.Header>
