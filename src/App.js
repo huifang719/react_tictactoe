@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import GameBoard from './components/GameBoard';
 import './App.css';
+import { Row } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Row className='text-center mt-2'>
+        <h1>Tic Tac Toe</h1>
+        <h4>Games of Throne edition</h4>
+        <Quote />
+      </Row>
+      <main>
+      <GameBoard />
+      </main>
     </div>
   );
 }
