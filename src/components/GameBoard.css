@@ -1,4 +1,8 @@
 .makeMove {
   font-size: 6rem;
-  color:bisque
+  color:bisque;
+  cursor: pointer;
+  display: flex;
+  place-content: center;
+  align-items: center;
 }
