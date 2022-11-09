@@ -3,12 +3,12 @@ import { Col, Row, Container } from "react-bootstrap"
 import './GameBoard.css'
 
 function GameBoard() {
-  const [board, setBoard] = useState(["", "X", "", "", "", "", "", "", ""]);
+  const [board, setBoard] = useState(["O", "X", "", "", "", "", "", "", ""]);
 
   return (
-    <Container style={{height:'300px', width:"300px", backgroundColor:"lightgray"}}>
+    <Container style={{height:'300px', width:"300px", backgroundColor:"lightgray", marginTop:"1rem"}}>
       <Row>
-        <Col className="makeMove" value={board[0]} style={{height:'100px', width:"100px"}}></Col>
+        <Col className="makeMove" value={board[0]} style={{height:'100px', width:"100px"}}>X</Col>
         <Col className="makeMove" value={board[1]} style={{height:'100px', width:"100px",backgroundColor:"white" }}></Col>
         <Col className="makeMove" value={board[2]} style={{height:'100px', width:"100px"}}></Col>
       </Row>
