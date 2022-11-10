@@ -13,7 +13,6 @@ function Quote() {
   
   return (
     <Card>
-      <Card.Header>Game of Thrones</Card.Header>
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p>

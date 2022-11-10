@@ -13,7 +13,7 @@ function App() {
         loop
       />
       <Row className='text-center mt-2'>
-        <h1 style={{fontFamily: "'Dancing Script', cursive"}}>Tic Tac Toe</h1>
+        <h1 style={{fontFamily: "'Dancing Script', cursive",color:"white", fontWeight:"bold"}}>Tic Tac Toe</h1>
         <Quote />
       </Row>
       <main>

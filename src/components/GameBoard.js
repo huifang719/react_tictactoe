@@ -50,10 +50,12 @@ function GameBoard() {
           setScoreBoard({...scoreBoard, dragon: scoreBoard['dragon'] + 1}) 
           setGameResult('House of the Dragon won')       
           gameReset()
+          return
       } else if (board[pattern[0]] === king && board[pattern[1]] === king && board[pattern[2]]=== king){    
           setScoreBoard({...scoreBoard, king: scoreBoard['king'] + 1} )       
           setGameResult('The Night King won')
-          gameReset()   
+          gameReset() 
+          return  
       } else {
           checkDraw()
       }
@@ -111,10 +113,10 @@ function GameBoard() {
         </Row>
       </Container>
       <div className="d-flex justify-content-center gap-2 mt-1">
-          <p className="align-self-end">King: {scoreBoard['king']}</p>
+          <p className="align-self-end" style={{color:"white", fontWeight:"bold"}}>King: {scoreBoard['king']}</p>
           <button onClick={gameReset}>Game Reset</button>
           <button onClick={scoreReset}>Score Reset</button>
-          <p className="align-self-end">Dragon: {scoreBoard['dragon']}</p>
+          <p className="align-self-end" style={{color:"white", fontWeight:"bold"}}>Dragon: {scoreBoard['dragon']}</p>
       </div>
     </Container>
   )
