@@ -16,4 +16,6 @@ body {
   background-image: url('./images/bg1.jpg');
   background-size: cover;
   background-position-y: bottom;
+  padding:0;
+  margin: 0;
 }
