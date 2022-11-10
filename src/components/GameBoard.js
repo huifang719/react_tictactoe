@@ -30,7 +30,7 @@ function GameBoard() {
               return value
             }
           }))
-    }    
+    }   
   }
 
   const switchPlayer = () => {
@@ -40,6 +40,18 @@ function GameBoard() {
       setPlayer(dragon)
     }
   }
+
+  const checkWinner = () => {
+    winningPattern.forEach(pattern => {
+      if (board[pattern[0]] === dragon && board[pattern[1]] === dragon && board[pattern[2]]=== dragon) {
+        alert('dragon wow')
+      } else if (board[pattern[0]] === king && board[pattern[1]] === king && board[pattern[2]]=== king){
+        alert('king won')
+      }
+    })
+  }
+  useEffect(checkWinner, [board])
+  useEffect(switchPlayer, [board])
 
   return (
     <Container style={{height:'300px', width:"300px", backgroundColor:"lightgray", marginTop:"1rem"}}>
