@@ -15,7 +15,7 @@ function GameBoard() {
       }
     }))
   }
-
+  
   return (
     <Container style={{height:'300px', width:"300px", backgroundColor:"lightgray", marginTop:"1rem"}}>
       <Row>
