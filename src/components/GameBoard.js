@@ -65,7 +65,6 @@ function GameBoard() {
       alert(gameResult)
       setTimeout(setGameResult(null), 5000)
     } 
-
   }
 
 
@@ -88,6 +87,7 @@ function GameBoard() {
 
   const scoreReset = () => {
     setScoreBoard({dragon: 0, king: 0})
+    setBoard(["", "", "", "", "", "", "", "", ""])
   }
 
   return (
