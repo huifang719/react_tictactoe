@@ -49,13 +49,11 @@ function GameBoard() {
       if (board[pattern[0]] === dragon && board[pattern[1]] === dragon && board[pattern[2]]=== dragon) {  
           setScoreBoard({...scoreBoard, dragon: scoreBoard['dragon'] + 1}) 
           setGameResult('House of the Dragon won')       
-          gameReset()
-          return
+          return gameReset()      
       } else if (board[pattern[0]] === king && board[pattern[1]] === king && board[pattern[2]]=== king){    
           setScoreBoard({...scoreBoard, king: scoreBoard['king'] + 1} )       
           setGameResult('The Night King won')
-          gameReset() 
-          return  
+          return gameReset()  
       } else {
           checkDraw()
       }
