@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Row className='text-center mt-2'>
-        <h1>Tic Tac Toe</h1>
+        <h1 style={{fontFamily: "'Dancing Script', cursive"}}>Tic Tac Toe</h1>
         <Quote />
       </Row>
       <main>
