@@ -9,7 +9,9 @@ import Image from 'react-bootstrap/Image'
 function GameBoard() {
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState(dragon)
+  const [gameResult, setGameResult] = useState(null)
   const [scoreBoard, setScoreBoard] = useState({dragon: 0, king: 0})
+
 
   const winningPattern = [
     [0,1,2],
@@ -46,16 +48,25 @@ function GameBoard() {
     winningPattern.forEach(pattern => {
       if (board[pattern[0]] === dragon && board[pattern[1]] === dragon && board[pattern[2]]=== dragon) {  
           setScoreBoard({...scoreBoard, dragon: scoreBoard['dragon'] + 1}) 
-          alert('dragon won')        
+          setGameResult('House of the Dragon won')       
           gameReset()
       } else if (board[pattern[0]] === king && board[pattern[1]] === king && board[pattern[2]]=== king){    
           setScoreBoard({...scoreBoard, king: scoreBoard['king'] + 1} )       
-          alert('king won')
-          gameReset()    
+          setGameResult('The Night King won')
+          gameReset()   
       }
     })
   }
   
+  const showResult =() =>{
+    if (gameResult!== null) {
+      alert(gameResult)
+      setTimeout(setGameResult(null), 5000)
+    } 
+
+  }
+
+  useEffect(showResult, [gameResult])
   useEffect(() => {
     switchPlayer();
     checkWinner();
@@ -64,8 +75,8 @@ function GameBoard() {
   }, [board]);
 
   const checkDraw = () => {
-    if(board.includes('') === false) {
-      alert("It's a draw")
+    if(board.includes('') === false && gameResult === null) {
+      setGameResult("It's a draw")
       gameReset()
     }
   }
@@ -98,10 +109,10 @@ function GameBoard() {
         </Row>
       </Container>
       <div className="d-flex justify-content-center gap-2 mt-1">
-          <p className="align-self-end">`King: {scoreBoard['king']}`</p>
+          <p className="align-self-end">King: {scoreBoard['king']}</p>
           <button onClick={gameReset}>Game Reset</button>
           <button onClick={scoreReset}>Score Reset</button>
-          <p className="align-self-end">`Dragon: {scoreBoard['dragon']}`</p>
+          <p className="align-self-end">Dragon: {scoreBoard['dragon']}</p>
       </div>
     </Container>
   )
