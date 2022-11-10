@@ -54,6 +54,8 @@ function GameBoard() {
           setScoreBoard({...scoreBoard, king: scoreBoard['king'] + 1} )       
           setGameResult('The Night King won')
           gameReset()   
+      } else {
+          checkDraw()
       }
     })
   }
@@ -66,11 +68,11 @@ function GameBoard() {
 
   }
 
+
   useEffect(showResult, [gameResult])
   useEffect(() => {
     switchPlayer();
     checkWinner();
-    checkDraw(); 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [board]);
 
