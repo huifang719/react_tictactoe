@@ -74,7 +74,7 @@ function GameBoard() {
     switchPlayer();
     checkWinner();
     checkDraw();
-  }, board);
+  }, [board]);
 
   return (
     <Container>
