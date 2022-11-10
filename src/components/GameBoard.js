@@ -69,11 +69,12 @@ function GameBoard() {
   const scoreReset = () => {
     setScoreBoard({dragon: 0, king: 0})
   }
+
   useEffect(() => {
     switchPlayer();
     checkWinner();
     checkDraw();
-  }, [board]);
+  }, board);
 
   return (
     <Container>
