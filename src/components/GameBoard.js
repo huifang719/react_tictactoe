@@ -56,6 +56,13 @@ function GameBoard() {
     })
   }
   
+  useEffect(() => {
+    switchPlayer();
+    checkWinner();
+    checkDraw(); 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [board]);
+
   const checkDraw = () => {
     if(board.includes('') === false) {
       alert("It's a draw")
@@ -69,12 +76,6 @@ function GameBoard() {
   const scoreReset = () => {
     setScoreBoard({dragon: 0, king: 0})
   }
-
-  useEffect(() => {
-    switchPlayer();
-    checkWinner();
-    checkDraw();
-  }, [board]);
 
   return (
     <Container>
