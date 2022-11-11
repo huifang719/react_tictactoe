@@ -110,11 +110,11 @@ function GameBoard() {
           <Col onClick={()=>{handleCellChange(8)}} className="makeMove" style={{height:'100px', width:"100px"}}><Image fluid src={board[8]}></Image></Col>
         </Row>
       </Container>
-      <div className="d-flex justify-content-center gap-2 mt-1">
-          <p className="align-self-end" style={{color:"white", fontWeight:"bold"}}>King: {scoreBoard['king']}</p>
+      <div className="d-flex justify-content-center align-content-end gap-2 mt-1">
+          <p className="align-self-end" style={{color:"white", fontSize:"2rem",fontWeight:"bold"}}>King: {scoreBoard['king']}</p>
           <button onClick={gameReset}>Game Reset</button>
           <button onClick={scoreReset}>Score Reset</button>
-          <p className="align-self-end" style={{color:"white", fontWeight:"bold"}}>Dragon: {scoreBoard['dragon']}</p>
+          <p className="align-self-end" style={{color:"white", fontSize:"2rem", fontWeight:"bold"}}>Dragon: {scoreBoard['dragon']}</p>
       </div>
     </Container>
   )

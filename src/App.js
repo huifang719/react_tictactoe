@@ -9,11 +9,11 @@ function App() {
     <div className="App">
       <ReactAudioPlayer
         src={GOT}
-        autoPlay
+        autoPlay={true}
         loop
       />
       <Row className='text-center mt-2'>
-        <h1 style={{fontFamily: "'Dancing Script', cursive",color:"white", fontWeight:"bold"}}>Tic Tac Toe</h1>
+        <h1 style={{fontFamily: "'Dancing Script', cursive",color:"white", fontWeight:"bold",marginTop:"1rem"}}>Tic Tac Toe</h1>
         <Quote />
       </Row>
       <main>
