@@ -1,5 +1,6 @@
 import { Card } from "react-bootstrap"
 import {useState, useEffect} from "react"
+import Typewriter from 'typewriter-effect';
 function Quote() {
   const [quote, setQuote ] = useState({})
   const getQuote = () => {
@@ -17,7 +18,14 @@ function Quote() {
         <blockquote className="blockquote mb-0">
           <p>
             {' '}
-            {quote.sentence}{' '}
+            <Typewriter style={{color:"lightgrey", fontSize:"2rem"}}
+              options={{
+                strings: [quote['sentence']],
+                autoStart: true,
+                loop: true,
+              }}
+            /> 
+            {' '}
           </p>
         </blockquote>
       </Card.Body>
