@@ -61,7 +61,7 @@ function GameBoard() {
       } else if (board[pattern[0]] === king && board[pattern[1]] === king && board[pattern[2]] === king) {
         setScoreBoard({ ...scoreBoard, king: scoreBoard.king + 1 });
         setGameResult('The Night King won');
-        return gameReset();
+        gameReset();
       }
       return checkDraw();
     });
@@ -74,11 +74,12 @@ function GameBoard() {
     }
   };
 
-  useEffect(showResult, [gameResult]);
   useEffect(() => {
     switchPlayer();
     checkWinner();
   }, [board]);
+
+  useEffect(showResult, [gameResult]);
 
   const scoreReset = () => {
     setScoreBoard({ dragon: 0, king: 0 });
