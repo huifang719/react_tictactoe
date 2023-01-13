@@ -22,6 +22,7 @@ function GameBoard() {
     [0, 4, 8],
     [2, 4, 6],
   ];
+
   const handleCellChange = (cellIndex) => {
     if (board[cellIndex] === '') {
       setBoard(board.map((value, index) => {
